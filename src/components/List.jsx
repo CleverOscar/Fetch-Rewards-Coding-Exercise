@@ -3,8 +3,6 @@ import React from 'react';
 
 function List() {
 
-    const hiringData = 'test';
-
     return(
         <div>
             <h1>
