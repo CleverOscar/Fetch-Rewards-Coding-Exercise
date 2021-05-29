@@ -2,38 +2,31 @@ import React from 'react';
 import {Row, Col, Table} from 'reactstrap';
 import './table.css';
 
-function TableList() {
+function TableList(props) {
+
+    const idList = props.data.map(listItem => <div>{listItem.listId}</div>)
+    const listName = props.data.map(listItem => <div>{listItem.name}</div>)
+
+    console.log(idList)
     return(
         <div className="tableList">
             <Row>
                 <Col>
                     <Table>
+
                     <thead>
                         <tr>
                         <th>#</th>
-                        <th>First Name</th>
-                        <th>Last Name</th>
+                        <th>Name</th>
                         <th>Username</th>
                         </tr>
                     </thead>
+
                     <tbody>
                         <tr>
-                        <th scope="row">1</th>
-                        <td>Mark</td>
-                        <td>Otto</td>
+                        <th>{idList}</th>
+                        <td>{listName}</td>
                         <td>@mdo</td>
-                        </tr>
-                        <tr>
-                        <th scope="row">2</th>
-                        <td>Jacob</td>
-                        <td>Thornton</td>
-                        <td>@fat</td>
-                        </tr>
-                        <tr>
-                        <th scope="row">3</th>
-                        <td>Larry</td>
-                        <td>the Bird</td>
-                        <td>@twitter</td>
                         </tr>
                     </tbody>
                 </Table>

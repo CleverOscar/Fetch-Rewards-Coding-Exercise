@@ -14,7 +14,7 @@ class ListComponent extends Component {
 
     componentDidMount() {
         axios.get('https://fetch-hiring.s3.amazonaws.com/hiring.json').then(res => {
-             console.log(res.data)
+            //  console.log(res.data)
             this.setState({fetchedData: res.data})
         }).catch(err => {
             this.setState({error: "Error retrieving data"})
@@ -36,7 +36,7 @@ class ListComponent extends Component {
 
                 {error ? <div>{error}</div> : <div>Fetching Data</div>}
                 
-                <TableList />
+                <TableList data={fetchedData}/>
 
             </div>
         )
