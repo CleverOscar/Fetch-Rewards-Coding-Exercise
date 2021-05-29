@@ -1,8 +1,9 @@
 import React, {Component} from 'react';
-import List from './List';
 import axios from 'axios';
 
 import TableList from './Table';
+
+import {Input} from 'reactstrap';
 
 class ListComponent extends Component {
     constructor(props) {
@@ -33,10 +34,17 @@ class ListComponent extends Component {
                         <p>{list.name}</p> 
                     </div>) : null
                 } */}
-
-                {error ? <div>{error}</div> : <div>Fetching Data</div>}
-                
-                <TableList data={fetchedData}/>
+                <Input type="text" placeholder="Search for names.." />
+                <Input type="select" placeholder="ID Group"> 
+                    <option>1</option>
+                    <option>2</option>
+                    <option>3</option>
+                    <option>4</option>
+                </Input>
+                {
+                    error ? < div > {
+                        error
+                    } </div> : <TableList data={fetchedData}/>}
 
             </div>
         )

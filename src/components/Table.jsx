@@ -1,37 +1,51 @@
 import React from 'react';
-import {Row, Col, Table} from 'reactstrap';
+import {Table} from 'reactstrap';
 import './table.css';
+
+import List from './List';
 
 function TableList(props) {
 
-    const idList = props.data.map(listItem => <div>{listItem.listId}</div>)
-    const listName = props.data.map(listItem => <div>{listItem.name}</div>)
+    const filter1 = props.data.filter(item => item.listId === 1)
+    const filter2 = props.data.filter(item => item.listId === 2)
+    const filter3 = props.data.filter(item => item.listId === 3)
+    const filter4 = props.data.filter(item => item.listId === 4)
+    const filter5 = props.data.filter(item => item.listId === 5)
 
-    console.log(idList)
+    console.log(filter1, filter2, filter3, filter4, filter5)
+
     return(
         <div className="tableList">
-            <Row>
-                <Col>
-                    <Table>
-
-                    <thead>
-                        <tr>
-                        <th>#</th>
-                        <th>Name</th>
-                        <th>Username</th>
-                        </tr>
-                    </thead>
-
-                    <tbody>
-                        <tr>
-                        <th>{idList}</th>
-                        <td>{listName}</td>
-                        <td>@mdo</td>
-                        </tr>
-                    </tbody>
-                </Table>
-                </Col>
-            </Row>
+            <Table>
+                <thead>
+                    <tr>
+                    <th>#</th>
+                    <th>First Name</th>
+                    <th>Last Name</th>
+                    <th>Username</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                    <th scope="row">1</th>
+                    <td>Mark</td>
+                    <td>Otto</td>
+                    <td>@mdo</td>
+                    </tr>
+                    <tr>
+                    <th scope="row">2</th>
+                    <td>Jacob</td>
+                    <td>Thornton</td>
+                    <td>@fat</td>
+                    </tr>
+                    <tr>
+                    <th scope="row">3</th>
+                    <td>Larry</td>
+                    <td>the Bird</td>
+                    <td>@twitter</td>
+                    </tr>
+                </tbody>
+            </Table>
         </div>
     )
 }
