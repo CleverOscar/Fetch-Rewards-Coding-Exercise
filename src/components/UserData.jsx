@@ -8,11 +8,10 @@ function UserData(props) {
 
     // sorting Data by listId
     showData.sort((a,b) => {
-        if(a.listId > b.listId){
-            console.log(a.listId)
-            return 1
+        if(a.listId > b.listId){  
+            return 1;
         } else {
-            return -1
+            return -1;
         }
     })
     

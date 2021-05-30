@@ -3,8 +3,6 @@ import axios from 'axios';
 
 import TableList from './Table';
 
-import {Input} from 'reactstrap';
-
 class ListComponent extends Component {
     constructor(props) {
         super(props);
@@ -28,13 +26,6 @@ class ListComponent extends Component {
 
         return(
             <div>
-                <Input type="text" placeholder="Search for names.." />
-                <Input type="select" placeholder="ID Group"> 
-                    <option value={1}>1</option>
-                    <option value={2}>2</option>
-                    <option value={3}>3</option>
-                    <option value={4}>4</option>
-                </Input>
                 {
                     error ? < div > {
                         error
