@@ -7,13 +7,13 @@ function UserData(props) {
     const showData = props.data.filter(el => el.name !== null && el.name !== "");
 
     // sorting Data by listId
-    showData.sort((a,b) => {
-        if(a.listId > b.listId){  
-            return 1;
-        } else {
-            return -1;
-        }
-    })
+    showData.sort((a, b) => {
+    if (a.listId > b.listId || (a.listId === b.listId && a.id > b.id)) {
+        return 1
+    } else {
+        return -1
+    }
+    });
     
     const userInfo = showData.map(el => <div>
          <tr key={el.id}>
