@@ -3,19 +3,31 @@ import React from 'react';
 
 function UserData(props) {
 
-    const showVisibleData = props.data.filter(el => el.name !== null && el.name !== "");
+    const showData = props.data.filter(el => el.name !== null && el.name !== "");
 
-    console.log(showVisibleData)
 
-    return(
-        <tr>
-            <th>Group: </th>
+    console.log(showData.sort((a,b) => {
+        if(a.listId >= b.listId){
+            return 1
+        } else {
+            return -1
+        }
+    }))
+    
+    const userInfo = showData.map(el => <div>
+         <tr key={el.id}>
+            <th>{el.listId}</th>
             <td>
-                User Data
+                {el.name}
             </td>
         </tr>
+    </div>);
+
+    return(
+        <tbody>
+            {userInfo}
+        </tbody>
     )
 }
-
 
 export default UserData;
