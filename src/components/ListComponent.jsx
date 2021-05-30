@@ -28,18 +28,12 @@ class ListComponent extends Component {
 
         return(
             <div>
-                {/* {fetchedData.length ? fetchedData.map(list => 
-                    <div key={list.listId}> 
-                        <p>{list.id}</p>  
-                        <p>{list.name}</p> 
-                    </div>) : null
-                } */}
                 <Input type="text" placeholder="Search for names.." />
                 <Input type="select" placeholder="ID Group"> 
-                    <option>1</option>
-                    <option>2</option>
-                    <option>3</option>
-                    <option>4</option>
+                    <option value={1}>1</option>
+                    <option value={2}>2</option>
+                    <option value={3}>3</option>
+                    <option value={4}>4</option>
                 </Input>
                 {
                     error ? < div > {
