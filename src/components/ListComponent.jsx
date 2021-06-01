@@ -7,24 +7,33 @@ class ListComponent extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            fetchedData: []
+            fetchedData: [],
         }
     }
 
     componentDidMount() {
         axios.get('https://fetch-hiring.s3.amazonaws.com/hiring.json').then(res => {
             //  console.log(res.data)
-            this.setState({fetchedData: res.data})
+
+            const userInfo = res.data.filter(el => el.name !== null && el.name !== "").sort((a, b) => {
+                if (a.listId > b.listId || (a.listId === b.listId && a.id > b.id)) {
+                    return 1
+                } else {
+                    return -1
+                }
+            });
+
+            this.setState({fetchedData: userInfo})
         }).catch(err => {
             this.setState({error: "Error retrieving data"})
         })
     }
-    
+
     render(){
 
-        const {fetchedData, error} = this.state; 
+            const {fetchedData, error} = this.state;
 
-        return(
+            return(
             <div>
                 {
                     error ? < div > {
