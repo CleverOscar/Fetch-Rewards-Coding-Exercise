@@ -1,4 +1,5 @@
 import React, {useState} from 'react';
+import FilterTable from '../FilterTable';
 
 
 function FilterByGroup (props) {
@@ -6,10 +7,10 @@ function FilterByGroup (props) {
     const [showResults, setShowResults] = useState(false);
 
     const itemId1 = (array) => {
-        array = props.data.map(el => el)
+        array = props.data.map(el => el
+        ).filter(el => el.listId === 1)
 
-        console.log(array.filter(el => el.listId <= 1))
-    
+        console.log(array)
     }
 
     const itemId2 = (array) => {
@@ -31,11 +32,8 @@ function FilterByGroup (props) {
     
     return(
         <div>
-            <button onClick={()=> {
-                if(showResults === false){
-                    setShowResults(true);
-                } else {
-                    setShowResults(false)}
+            <button onClick={() =>{
+                console.log(<FilterTable data={props.data} />)
             }}>1</button>
             <button onClick={itemId2}>2</button>
             <button onClick={itemId3}>3</button>

@@ -19,7 +19,7 @@ function TableList(props) {
                     <th>Username</th>
                     </tr>
                 </thead>
-                <UserData data={props.data} />
+                {/* <UserData data={props.data} /> */}
             </Table>
         </div>
     )
