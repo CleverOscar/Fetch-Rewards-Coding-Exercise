@@ -1,5 +1,5 @@
 import React from 'react';
-// import axios from 'axios';
+import GroupTable from './buttons/FilterByGroup'
 
 function UserData(props) {
     
@@ -25,7 +25,7 @@ function UserData(props) {
     </div>);
 
     return(
-        <tbody>
+        <tbody>           
             {userInfo}
         </tbody>
     )

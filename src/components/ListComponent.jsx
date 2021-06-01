@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import axios from 'axios';
 
-import TableList from './Table';
+import TableList from './TableList';
 
 class ListComponent extends Component {
     constructor(props) {
