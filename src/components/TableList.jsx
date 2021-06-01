@@ -2,7 +2,7 @@ import React from 'react';
 import {Table} from 'reactstrap';
 import './table.css';
 
-import UserData from './UserData';
+// import UserData from './UserData';
 import FilterByGroup from './buttons/FilterByGroup';
 
 function TableList(props) {
@@ -22,6 +22,26 @@ function TableList(props) {
                 <UserData data={props.data} />
             </Table>
         </div>
+    )
+}
+
+
+function UserData(props) {
+    
+    // filter out empty name properties such as null or ""
+    const userInfo = props.data.map(el => <div>
+         <tr key={el.id}>
+            <th>{el.listId}</th>
+            <td>
+                {el.name}
+            </td>
+        </tr>
+    </div>);
+
+    return(
+        <tbody>           
+            {userInfo}
+        </tbody>
     )
 }
 
