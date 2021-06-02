@@ -2,7 +2,7 @@ import React from 'react';
 import {Table} from 'reactstrap';
 import './table.css';
 
-import FilterTable from './FilterTable';
+import FilterTable1 from './FilterTable';
 
 function TableList(props) {
 
@@ -18,7 +18,7 @@ function TableList(props) {
                     </tr>
                 </thead>
                 {props.data.view === 'landingPage' ? <UserData data={props.data}/> : null}
-                {props.data.view === 'group1' ? 1 : null}
+                {props.data.view === 'group1' ? <FilterTable1 data={props.data}/> : null}
                 {props.data.view === 'group2' ? 2 : null}
                 {props.data.view === 'group3' ? 3 : null}
                 {props.data.view === 'group4' ? 4 : null}

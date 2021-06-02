@@ -38,6 +38,12 @@ class ListComponent extends Component {
                 <button onClick={()=>{
                     console.log('clicked');
                     this.setState({
+                        view: 'landingPage'
+                    })}}> Full List
+                </button>
+                <button onClick={()=>{
+                    console.log('clicked');
+                    this.setState({
                         view: 'group1'
                     })}}> 1
                 </button>
