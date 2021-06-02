@@ -8,21 +8,24 @@ class ListComponent extends Component {
         super(props);
         this.state = {
             fetchedData: [],
+            view: 'landingPage',
         }
     }
 
+
+    // requesting data from server api
     componentDidMount() {
         axios.get('https://fetch-hiring.s3.amazonaws.com/hiring.json').then(res => {
-            //  console.log(res.data)
 
-            const userInfo = res.data.filter(el => el.name !== null && el.name !== "").sort((a, b) => {
-                if (a.listId > b.listId || (a.listId === b.listId && a.id > b.id)) {
-                    return 1
-                } else {
-                    return -1
-                }
-            });
-
+        // sort out our data by List ID then by Name
+        const userInfo = res.data.filter(el => el.name !== null && el.name !== "").sort((a, b) => {
+            if (a.listId > b.listId || (a.listId === b.listId && a.id > b.id)) {
+                return 1
+            } else {
+                return -1
+            }
+        });
+            // set the component state with the data we recieved
             this.setState({fetchedData: userInfo})
         }).catch(err => {
             this.setState({error: "Error retrieving data"})
@@ -30,19 +33,76 @@ class ListComponent extends Component {
     }
 
     render(){
-
-            const {fetchedData, error} = this.state;
-
             return(
             <div>
-                {
-                    error ? < div > {
-                        error
-                    } </div> : <TableList data={fetchedData}/>}
+                <button onClick={()=>{
+                    console.log('clicked');
+                    this.setState({
+                        view: 'group1'
+                    })}}> 1
+                </button>
+                <button onClick={()=>{
+                    console.log('clicked');
+                    this.setState({
+                        view: 'group2'
+                    })}}> 2
+                </button>
+                <button onClick={()=>{
+                    console.log('clicked');
+                    this.setState({
+                        view: 'group3'
+                    })}}> 3
+                </button>
+                <button onClick={()=>{
+                    console.log('clicked');
+                    this.setState({
+                        view: 'group4'
+                    })}}> 4
+                </button>
 
+                <TableList data={this.state}/>
             </div>
         )
     }
 }
 
 export default ListComponent;
+
+
+
+
+
+
+
+
+// //             <button onClick={()=>{
+// console.log('clicked');
+
+// this.setState({
+//     view: 'group2'
+// })
+
+
+// }
+// } > 2 < /button> <
+//     button onClick = {
+//         () => {
+//             console.log('clicked');
+
+//             this.setState({
+//                 view: 'group3'
+//             })
+
+
+//         }
+//     } > 3 < /button> <
+//     button onClick = {
+//         () => {
+//             console.log('clicked');
+
+//             this.setState({
+//                 view: 'group4'
+//             })
+
+//         }
+//     } > 4 < /button>
