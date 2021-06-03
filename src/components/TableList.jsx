@@ -22,17 +22,7 @@ function TableList(props) {
     )
 }
 
-
 function UserData(props) {
-    
-    const  userInfo = props.data.fetchedData.map(el => <div>
-         <tr key={el.id}>
-            <th>{el.listId}</th>
-            <td>
-                {el.name}
-            </td>
-        </tr>
-    </div>);
 
     return(
         <tbody>           
@@ -46,14 +36,5 @@ function UserData(props) {
         </tbody>
     )
 }
-
-
-// const itemId1 = (array) => {
-//     array = props.data.fetched.map(el => el).filter(el => el.listId === 1)
-
-// }
-
-
-
 
 export default TableList;
