@@ -36,31 +36,26 @@ class ListComponent extends Component {
             return(
             <div>
                 <button onClick={()=>{
-                    console.log('clicked');
                     this.setState({
                         view: 'landingPage'
                     })}}> Full List
                 </button>
                 <button onClick={()=>{
-                    console.log('clicked');
                     this.setState({
                         view: 'group1'
                     })}}> 1
                 </button>
                 <button onClick={()=>{
-                    console.log('clicked');
                     this.setState({
                         view: 'group2'
                     })}}> 2
                 </button>
                 <button onClick={()=>{
-                    console.log('clicked');
                     this.setState({
                         view: 'group3'
                     })}}> 3
                 </button>
                 <button onClick={()=>{
-                    console.log('clicked');
                     this.setState({
                         view: 'group4'
                     })}}> 4

@@ -11,10 +11,8 @@ function TableList(props) {
             <Table>
                 <thead>
                     <tr>
-                    <th>#</th>
-                    <th>First Name</th>
-                    <th>Last Name</th>
-                    <th>Username</th>
+                    <th>ID</th>
+                    <th>Item</th>
                     </tr>
                 </thead>
                 {props.data.view === 'landingPage' ? <UserData data={props.data}/> : null}
