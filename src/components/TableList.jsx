@@ -18,10 +18,7 @@ function TableList(props) {
                     </tr>
                 </thead>
                 {props.data.view === 'landingPage' ? <UserData data={props.data}/> : null}
-                {props.data.view === 'group1' ? <FilterTable1 data={props.data}/> : null}
-                {props.data.view === 'group2' ? 2 : null}
-                {props.data.view === 'group3' ? 3 : null}
-                {props.data.view === 'group4' ? 4 : null}
+                {props.data.view === 'group1' || 'group2' || 'group3' || 'group4' ? < FilterTable1 data = {props.data}/> : null}
             </Table>
         </div>
     )
